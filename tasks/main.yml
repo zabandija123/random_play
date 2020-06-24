@@ -1,2 +1,8 @@
 ---
-# tasks file for random_play
+# tasks file for random_test
+- name: config file create
+  file:
+    path: "/etc/myFile"
+    owner: root
+    mode: 0700
+    state: touch
