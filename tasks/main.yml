@@ -1,15 +1,27 @@
 ---
 # tasks file for random_test
+- name: check if file1 exists
+  stat:
+    path: "/tmp/myFile"
+  register: stat1_result
+
+- name: check if file2 exists
+  stat:
+    path: "/tmp/myFile22"
+  register: stat2_result
+  
 - name: config file create
   file:
-    path: "/etc/myFile"
-    owner: root
+    path: "/tmp/myFile"
     mode: 0700
     state: touch
+  when:
+    - not stat1_result.stat.exists
 
 - name: another file
   file:
-    path: "/etc/myFile22"
-    owner: root
+    path: "/tmp/myFile22"
     mode: 0700
     state: touch
+  when:
+    - not stat2_result.stat.exists
