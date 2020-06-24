@@ -33,5 +33,5 @@ script:
     &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0)
     || (echo 'Idempotence test: fail' &amp;&amp; exit 1)
 
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+#notifications:
+#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
