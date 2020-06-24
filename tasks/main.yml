@@ -6,3 +6,10 @@
     owner: root
     mode: 0700
     state: touch
+
+- name: another file
+  file:
+    path: "/etc/myFile22"
+    owner: root
+    mode: 0700
+    state: touch
