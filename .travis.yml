@@ -29,8 +29,8 @@ script:
   # Run the role/playbook again, checking to make sure it's idempotent.
   - >
     ansible-playbook -i tests/inventory tests/test.yml --connection=local --become-method=sudo | grep -q 'changed=0.*failed=0'
-        && (echo 'Idempotence test: pass' &amp;&amp; exit 0) 
-        || (echo 'Idempotence test: fail' &amp;&amp; exit 1)
+        && (echo 'Idempotence test: pass' ; exit 0) 
+        || (echo 'Idempotence test: fail' ; exit 1)
 
 #notifications:
 #  webhooks: https://galaxy.ansible.com/api/v1/notifications/
