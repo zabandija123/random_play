@@ -2,14 +2,12 @@
 # tasks file for random_test
 - name: config file create
   file:
-    path: "/etc/myFile"
-    owner: root
+    path: "/tmp/myFile"
     mode: 0700
     state: touch
 
 - name: another file
   file:
-    path: "/etc/myFile22"
-    owner: root
+    path: "/tmp/myFile22"
     mode: 0700
     state: touch
