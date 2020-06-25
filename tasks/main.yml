@@ -29,6 +29,7 @@
 ## pg_data_dir: blablabla
 
 - name: data dir symbolic link create
+  become: yes
   file:
     src: "{{ pg_data_dir }}"
     dest: /root/data
