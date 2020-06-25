@@ -1,2 +1,7 @@
 ---
 # defaults file for random_play
+umask_login_scripts: 
+    - /etc/file1
+    - /etc/file2
+pg_data_dir: '/tmp'
+my_fake_variable: 'false'
