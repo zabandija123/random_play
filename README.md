@@ -3,7 +3,7 @@ Random Play
 
 [![Build Status](https://travis-ci.org/zabandija123/random_play.svg?branch=master)](https://travis-ci.org/zabandija123/random_play) 
 
-A brief description of the role goes here. Totally agree with this.
+Play with travis and random modules. Totally agree with this.
 
 Requirements
 ------------
