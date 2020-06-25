@@ -25,3 +25,40 @@
     state: touch
   when:
     - not stat2_result.stat.exists
+
+## pg_data_dir: blablabla
+
+- name: data dir symbolic link create
+  file:
+    src: "{{ pg_data_dir }}"
+    dest: /root/data
+    owner: root
+    group: root
+    state: link
+####
+
+- name: umask set for tower setup
+  lineinfile:
+    path: "{{ item }}"
+    backup: yes
+    regexp: '022'
+    line: 077
+    owner: root
+    group: root
+  with_items:
+      - "{{ umask_login_scripts }}"
+  tags:
+    - umask_tower_requirement
+
+- name: umask restor for compliance
+  lineinfile:
+    path: "{{ item }}"
+    regexp: '022'
+    line: 077
+    owner: root
+    group: root
+  with_items:
+      - "{{ umask_login_scripts }}"
+  tags:
+    - compliance
+    - umask_compliance_restore

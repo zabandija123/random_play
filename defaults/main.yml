@@ -1,2 +1,5 @@
 ---
 # defaults file for random_play
+umask_login_scripts: 
+    - /etc/file1
+    - /etc/file2
