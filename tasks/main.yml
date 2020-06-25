@@ -47,6 +47,8 @@
     group: root
   with_items:
       - "{{ umask_login_scripts }}"
+  when:
+    - {{ my_fake_variable }}
   tags:
     - umask_tower_requirement
 
@@ -59,6 +61,8 @@
     group: root
   with_items:
       - "{{ umask_login_scripts }}"
+  when:
+    - {{ my_fake_variable }}
   tags:
     - compliance
     - umask_compliance_restore
